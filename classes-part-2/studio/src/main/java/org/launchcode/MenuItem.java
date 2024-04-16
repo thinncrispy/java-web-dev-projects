@@ -28,5 +28,11 @@ public class MenuItem {
     public void setNew(boolean aNew) {
         isNew = aNew;
     }
+
+    @Override
+    public String toString(){
+        String newText = isNew() ? "- NEW!";
+        return description + newText + "\n" + category + "$" + price;
+    }
 }
 

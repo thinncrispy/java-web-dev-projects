@@ -1,6 +1,8 @@
 package org.launchcode;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 public class MenuItem {
 
     private String name;
@@ -52,4 +54,10 @@ public class MenuItem {
     public LocalDate getDateAdded() {
         return dateAdded;
     }
+    boolean isNew(){
+        LocalDate today = LocalDate.now();
+        double daysBetween = getDateAdded().until(today, ChronoUnit.DAYS);
+        return daysBetween < 90;
+    }
+
 }
